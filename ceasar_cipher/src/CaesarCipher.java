@@ -27,7 +27,7 @@ public class CaesarCipher implements Cryptography {
 
     @Override
     public String decrypt(String cipherText, int key) {
-        String painText = "";
+        String plainText = "";
 
         for (var i = 0; i < cipherText.length(); i++) {
             char character = cipherText.charAt(i);
@@ -38,8 +38,8 @@ public class CaesarCipher implements Cryptography {
              */
 
             int decryptedIndex = Math.floorMod(charIndex - key, ALPHABET.length());
-            painText += ALPHABET.charAt(decryptedIndex);
+            plainText += ALPHABET.charAt(decryptedIndex);
         }
-        return painText;
+        return plainText;
     }
 }
